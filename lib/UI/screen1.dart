@@ -251,10 +251,17 @@ Widget itemCard({
           children: [
             Text(
               title,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             SizedBox(height: 3),
-            Text(subtitle, style: TextStyle(color: Colors.grey, fontSize: 12)),
+            Text(
+              subtitle,
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
           ],
         ),
         Spacer(),
