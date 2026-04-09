@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../widgets/appbar.dart';
+import '../widgets/progress_bar.dart';
 
 class Report extends StatelessWidget {
   const Report({super.key});
@@ -11,37 +13,10 @@ class Report extends StatelessWidget {
           padding: EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.blueAccent,
-                      backgroundImage: AssetImage('assets/profile.png'),
-                    ),
-                    SizedBox(width: 12),
-
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Welcome back,",
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            "M. M Sajjatul Islam",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    Icon(Icons.notifications_none),
-                  ],
-                ),
+              HeaderWidget(
+                userName: "M.M Sajjatul Islam",
+                profileImagePath: "assets/profile.png",
               ),
-
               SizedBox(height: 15),
 
               Column(
@@ -167,41 +142,3 @@ class Report extends StatelessWidget {
   }
 }
 
-Widget progressBar(
-  String category,
-  String amount,
-  String percentage,
-  Color barColor,
-  double progress,
-) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            category,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-          ),
-          Text(
-            "$amount ($percentage)",
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
-
-      const SizedBox(height: 8),
-
-      ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: LinearProgressIndicator(
-          value: progress,
-          minHeight: 8,
-          color: barColor,
-          backgroundColor: Colors.grey[300],
-        ),
-      ),
-    ],
-  );
-}

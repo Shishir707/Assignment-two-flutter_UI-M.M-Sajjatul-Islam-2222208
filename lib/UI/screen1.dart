@@ -1,4 +1,8 @@
+import 'package:assignment_two/widgets/appbar.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/action_button.dart';
+import '../widgets/item_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,42 +21,18 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.blueAccent,
-                      backgroundImage: AssetImage('assets/profile.png'),
-                    ),
-                    SizedBox(width: 12),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Welcome back,",
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                        Text(
-                          "M. M Sajjatul Islam",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Spacer(),
-                    Icon(Icons.notifications_none),
-
-                    SizedBox(height: 10),
-                  ],
-                ),
+              HeaderWidget(
+                userName: "M.M Sajjatul Islam",
+                profileImagePath: "assets/profile.png",
               ),
+
               SizedBox(height: 10),
               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Container(
                   padding: EdgeInsets.all(30),
                   decoration: BoxDecoration(
-                    color: Colors.blue[500],
+                    color: Colors.blue[800],
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Column(
@@ -182,98 +162,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-}
-
-class ActionButton extends StatelessWidget {
-  final IconData icon;
-  final String label;
-
-  const ActionButton({super.key, required this.icon, required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 6),
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 16),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.05),
-                blurRadius: 10,
-                offset: Offset(0, 4),
-              ),
-            ],
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                padding: EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Color(0xFFEAEAFF),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(icon, color: Colors.deepPurple),
-              ),
-              SizedBox(height: 10),
-              Text(label, style: TextStyle(fontWeight: FontWeight.w500)),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-Widget itemCard({
-  required IconData icon,
-  required String title,
-  required String subtitle,
-  required String amount,
-  required Color amountColor,
-}) {
-  return Padding(
-    padding: EdgeInsets.all(12),
-    child: Row(
-      children: [
-        CircleAvatar(
-          radius: 22,
-          backgroundColor: Colors.grey.shade200,
-          child: Icon(icon, color: Colors.black87),
-        ),
-        SizedBox(width: 15),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-            ),
-            SizedBox(height: 3),
-            Text(
-              subtitle,
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
-        ),
-        Spacer(),
-        Text(
-          amount,
-          style: TextStyle(
-            color: amountColor,
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-          ),
-        ),
-      ],
-    ),
-  );
 }
