@@ -22,8 +22,8 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   children: [
                     CircleAvatar(
-                      backgroundColor: Colors.deepPurple,
-                      child: Text("M", style: TextStyle(color: Colors.white)),
+                      backgroundColor: Colors.blueAccent,
+                      backgroundImage: AssetImage('assets/profile.png'),
                     ),
                     SizedBox(width: 12),
                     Column(

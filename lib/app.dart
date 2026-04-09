@@ -1,3 +1,4 @@
+import 'package:assignment_two/UI/screen4.dart';
 import 'package:flutter/material.dart';
 import 'UI/screen1.dart';
 
@@ -32,7 +33,7 @@ class _MainNavigationState extends State<MainNavigation> {
     HomePage(),
     const Center(child: Text("Reports Page")),
     const Center(child: Text("Cards Page")),
-    const Center(child: Text("Profile Page")),
+    Profile(),
   ];
 
   @override
