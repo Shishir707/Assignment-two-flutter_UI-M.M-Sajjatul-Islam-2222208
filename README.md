@@ -11,7 +11,7 @@ A few resources to get you started if this is your first Flutter project:
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-| Home | Report | Profile |
-|-------|-------|------|
-| <img src="assets/" width="200" height="400" style="object-fit: cover; border-radius: 12px;"> | <img src="assets/" width="200" height="400" style="object-fit: cover; border-radius: 12px;"> | <img src="assets/" width="200" height="400" style="object-fit: cover; border-radius: 12px;"> |
-| Splash Screen | Login Screen | Verify Email |
+| Home                                                                                                 | Report                                                                                                 | Profile                                                                                                     |
+|------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| <img src="assets/home.png" width="200" height="400" style="object-fit: cover; border-radius: 12px;"> | <img src="assets/report.png" width="200" height="400" style="object-fit: cover; border-radius: 12px;"> | <img src="assets/editprofile.png" width="200" height="400" style="object-fit: cover; border-radius: 12px;"> |
+| Home Screen                                                                                          | Report Screen                                                                                          | Profile Screen                                                                                              |
